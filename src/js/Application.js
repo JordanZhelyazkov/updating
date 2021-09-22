@@ -1,5 +1,5 @@
 import EventEmitter from "eventemitter3";
-import anime from "animejs";
+import anime, { easings } from "animejs";
 export default class Application extends EventEmitter {
   static get events() {
     return {
@@ -12,5 +12,17 @@ export default class Application extends EventEmitter {
     this.init();
     this.emit(Application.events.READY);
   }
-  init() {}
+  init() {
+    const article = document.querySelector(".article");
+    article.addEventListener('click',()=>{
+      anime({
+        targets:  ['article'],
+        translateX: 270,
+        direction: "alternate",
+        loop: true,
+        duration: 2000,
+        easings: 'spring(5, 90, 10, 10)',
+      })
+    });
+  }
 }
