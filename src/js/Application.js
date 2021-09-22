@@ -21,7 +21,7 @@ export default class Application extends EventEmitter {
         direction: "alternate",
         loop: true,
         duration: 2000,
-        easings: 'spring(5, 90, 10, 10)',
+        easing: 'spring(5, 90, 10, 10)',
       })
     });
   }
